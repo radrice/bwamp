@@ -16,6 +16,13 @@
 
 @import "./_styles";
 
+.text-center {
+  text-align: center;
+}
+.centered {
+  width: 300px;
+  margin: 0 auto;
+}
 /*
 
  DEBUGGING
