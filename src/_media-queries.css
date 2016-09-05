@@ -1,25 +1,36 @@
-/* ==========================================================================
-   MEDIA QUERIES
-   ========================================================================== */
-
 /*
 
-  These breakpoints can be extended or modified to your hearts content
+  CUSTOM MEDIA QUERIES
 
-  You can use like this:
+  Media query values can be changed to fit your own content.
+  There are no magic bullets when it comes to media query width values.
+  They should be declared in em units - and they should be set to meet
+  the needs of your content. You can also add additional media queries,
+  or remove some of the existing ones.
 
-  @media (--breakpoint-medium-and-up) {
-      Your breakpoint styles here.
-      Don't forget to make them mobile first :)
+  These media queries can be referenced like so:
+
+  @media (--breakpoint-not-small) {
+    .medium-and-larger-specific-style {
+      background-color: red;
+    }
   }
 
-  You can also use media queries to target more than just a devices window width.
-  Checkout the css4 spec for more info.
+  @media (--breakpoint-medium) {
+    .medium-screen-specific-style {
+      background-color: red;
+    }
+  }
 
+  @media (--breakpoint-large) {
+    .large-and-larger-screen-specific-style {
+      background-color: red;
+    }
+  }
 
 */
 
-
-@custom-media --breakpoint-medium-and-up screen and (min-width: 32em);
-@custom-media --breakpoint-medium screen and (min-width: 32em) and (max-width: 64em);
-@custom-media --breakpoint-large screen and (min-width: 64em);
+/* Media Queries */
+@custom-media --breakpoint-not-small screen and (min-width: 30em);
+@custom-media --breakpoint-medium screen and (min-width: 30em) and (max-width: 60em);
+@custom-media --breakpoint-large screen and (min-width: 60em);
