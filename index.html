@@ -9,20 +9,33 @@
     <meta name="author" content="radrice">
     <meta name="description" content="mnml bwamping enabled">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/mnml.min.css">
+    <link rel="stylesheet" href="css/tachyons.min.css">
   </head>
-  <body>
-    <h1 class="text-center">BWAMP</h1>
-    <div class="centered">
-      <audio src="horn.mp3" controls></audio>
+  <body class="tc sans-serif">
+    <h1><a class="play" href="#">BWAMP</a></h1>
+    <div class="">
+      <audio class="bwamp" preload="auto">
+        <source src="horn.mp3">
+        Your browser cannot <code>bwamp</code>.
+      </audio>
     </div>
-    <h1 class="text-center">BWAMP 2</h1>
-    <div class="centered">
-      <audio src="horn-2.mp3" controls></audio>
+    <h1><a class="play" href="#">BWAMP 2</a></h1>
+    <div class="">
+      <audio class="bwamp" preload="auto">
+        <source src="horn-2.mp3">
+        Your browser cannot <code>bwamp 2</code>.
+      </audio>
     </div>
-    <h1 class="text-center">BWAMP 3</h1>
-    <div class="centered">
-      <audio src="horn-3.mp3" controls></audio>
+    <h1><a class="play" href="#">BWAMP 3</a></h1>
+    <div class="">
+      <audio class="bwamp" preload="auto">
+        <source src="horn-3.mp3">
+        Your browser cannot <code>bwamp 3</code>.
+      </audio>
     </div>
+    <div class="">
+      <h1><a href="#" id="playAll">PLAY ALL BWAMPS</a></h1>
+    </div>
+    <script src="js/bwamp.js"></script>
   </body>
 </html>

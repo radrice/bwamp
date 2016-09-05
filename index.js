@@ -1,4 +1,4 @@
-// dependencies for mnml
+// dependencies for tachyons
 
 var fs = require("fs")
 var autoprefixer = require("autoprefixer")
@@ -10,7 +10,7 @@ var conditionals = require('postcss-conditionals')
 var customMedia = require("postcss-custom-media")
 
 // css to be processed
-var css = fs.readFileSync("src/mnml.css", "utf8")
+var css = fs.readFileSync("src/tachyons.css", "utf8")
 
 // process css
 var output = postcss()
@@ -20,16 +20,18 @@ var output = postcss()
   .use(customMedia())
   .use(autoprefixer())
   .process(css, {
-    from: "./src/mnml.css",
-    to: "./css/mnml.css"
+    from: "./src/tachyons.css",
+    to: "./css/tachyons.css"
   })
-  .css
+  .then(function(output) {
+    fs.writeFile("css/tachyons.css", output, 'utf-8')
+  });
 
-fs.writeFile("css/mnml.css", output, 'utf-8')
+
 
 // Using Clean-css for CSS
 new compressor.minify({
     type: 'clean-css',
-    fileIn: './css/mnml.css',
-    fileOut: './css/mnml.min.css'
+    fileIn: './css/tachyons.css',
+    fileOut: './css/tachyons.min.css'
 });
