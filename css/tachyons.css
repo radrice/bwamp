@@ -3975,3 +3975,24 @@ code, .code {
 
 /* Uncomment out the line below to help debug layout issues */
 /* @import './_debug'; */
+
+.blink {
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-name: blink;
+            animation-name: blink;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-timing-function: steps(2, start);
+            animation-timing-function: steps(2, start);
+}
+@-webkit-keyframes blink {
+    80% {
+        visibility: hidden;
+    }
+}
+@keyframes blink {
+    80% {
+        visibility: hidden;
+    }
+}
