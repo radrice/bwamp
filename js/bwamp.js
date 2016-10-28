@@ -1,7 +1,10 @@
 (function(){
     var buttons = document.getElementsByClassName('play'),
         bwamps = document.getElementsByClassName('bwamp'),
-        playAll = document.getElementById('playAll');
+        playAll = document.getElementById('playAll'),
+        identify = document.getElementById('identify'),
+        identity = document.getElementById('identity'),
+        identified = document.getElementById('identified');
 
     function pauseResetPlayAll() {
       for(var i = 0; i < bwamps.length; i++) {
@@ -31,5 +34,23 @@
       }
     }
 
+    identify.addEventListener('click', function(e) {
+      var value = getValue(identity);
+      if (value) {
+        identified.textContent = value;
+        if (FS) {
+          FS.identify(value.toString(), { displayName: value });
+        }
+        document.getElementById('bwampForm').classList.add('dn');
+        document.getElementById('bwampMessage').classList.remove('dn');
+      } else {
+        return;
+      }
+      e.preventDefault();
+    }, false);
+
+    function getValue(input) {
+      return input.value.toString();
+    }
 
 })();

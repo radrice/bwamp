@@ -3996,3 +3996,7 @@ code, .code {
         visibility: hidden;
     }
 }
+
+.bg-space {
+  background: #000 url(../img/bg-space.jpg) center center no-repeat;
+}
