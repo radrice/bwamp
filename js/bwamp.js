@@ -39,7 +39,8 @@
       if (value) {
         identified.textContent = value;
         if (FS) {
-          FS.identify(value.toString(), { displayName: value });
+          FS.clearUserCookie();
+          FS.identify(shittyId(), { displayName: value });
         }
         document.getElementById('bwampForm').classList.add('dn');
         document.getElementById('bwampMessage').classList.remove('dn');
@@ -53,4 +54,7 @@
       return input.value.toString();
     }
 
+    function shittyId() {
+      return Math.random().toString(36).substr(2,9);
+    }
 })();
