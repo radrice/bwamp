@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>
+      BWAMP:GTM
+    </title>
+    <meta name="author" content="radrice">
+    <meta name="description" content="mnml bwamping enabled">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-icon-180x180.png">
+    <link rel="stylesheet" href="../css/mnml.min.css">
+    <link rel="stylesheet" href="../css/tachyons.min.css">
+  </head>
+  <body class="tc sans-serif bg-space cover">
+    <h1 class="f-subheadline white blink">BWAMP!</h1>
+    <h1><a class="play light-yellow" href="#">BWAMP</a></h1>
+    <div class="">
+      <audio class="bwamp" preload="auto">
+        <source src="../horn.mp3">
+        Your browser cannot <code>bwamp</code>.
+      </audio>
+    </div>
+    <h1><a class="play light-yellow" href="#">BWAMP 2</a></h1>
+    <div class="">
+      <audio class="bwamp" preload="auto">
+        <source src="../horn-2.mp3">
+        Your browser cannot <code>bwamp 2</code>.
+      </audio>
+    </div>
+    <h1><a class="play light-yellow" href="#">BWAMP 3</a></h1>
+    <div class="">
+      <audio class="bwamp" preload="auto">
+        <source src="../horn-3.mp3">
+        Your browser cannot <code>bwamp 3</code>.
+      </audio>
+    </div>
+    <div class="">
+      <h1><a class="yellow" href="#" id="playAll">PLAY ALL BWAMPS</a></h1>
+    </div>
+    <div id="bwampForm">
+      <label class="db white lh-title">Who is bwamping?</label>
+      <input id="identity" class="input-reset">
+      <button id="identify">Thank you</button>
+    </div>
+    <div id="bwampMessage" class="dn white lh-copy">
+      Happy bwamping <span id="identified"></span>
+    </div>
+    <script src="../js/bwamp.js"></script>
+  </body>
+</html>
