@@ -4,7 +4,11 @@
         playAll = document.getElementById('playAll'),
         identify = document.getElementById('identify'),
         identity = document.getElementById('identity'),
-        identified = document.getElementById('identified');
+        identified = document.getElementById('identified'),
+        wish = document.getElementById('wish'),
+        wishConsent = document.getElementById('wishConsent'),
+        wishSubmit = document.getElementById('wishSubmit'),
+        wishPower = document.getElementById('wishPower');
 
     function pauseResetPlayAll() {
       for(var i = 0; i < bwamps.length; i++) {
@@ -35,7 +39,7 @@
     }
 
     identify.addEventListener('click', function(e) {
-      var value = getValue(identity);
+      var value = getValueString(identity);
       if (value) {
         identified.textContent = value;
         if (FS) {
@@ -50,7 +54,23 @@
       e.preventDefault();
     }, false);
 
-    function getValue(input) {
+    wishSubmit.addEventListener('click', function(e) {
+      var wishValue = getValueString(wish);
+      if (wishValue) {
+        document.getElementById('wishForm').classList.add('dn');
+        document.getElementById('wishMessage').classList.remove('dn');
+        wishPower.textContent = wishValue.length;
+        if (FS && wishConsent.checked) {
+          FS.consent(true);
+        }
+      } else {
+        return;
+      }
+
+      e.preventDefault();
+    }, false);
+
+    function getValueString(input) {
       return input.value.toString();
     }
 

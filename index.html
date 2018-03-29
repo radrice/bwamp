@@ -56,13 +56,30 @@
     <div class="">
       <h1><a class="yellow" href="#" id="playAll">PLAY ALL BWAMPS</a></h1>
     </div>
-    <div id="bwampForm">
-      <label class="db white lh-title">Who is bwamping?</label>
-      <input id="identity" class="input-reset">
+    <div id="bwampForm" class="mv4">
+      <label class="f4 db white lh-title mb2">Who is bwamping?</label>
+      <input id="identity" class="f4 w-25 input-reset mb2">
+      <br>
       <button id="identify">Thank you</button>
     </div>
-    <div id="bwampMessage" class="dn white lh-copy">
+    <div id="bwampMessage" class="dn white lh-copy mv4 f2">
       Happy bwamping <span id="identified"></span>
+    </div>
+    <hr>
+    <div id="wishForm" class="mv4">
+      <label class="db white lh-title mb2 f4">Care to make a wish?</label>
+      <textarea id="wish" class="f4 input-reset w-25 lh-title h4 pa2"></textarea>
+      <label for="wishConset" class="db white mb2">
+        <input type="checkbox" id="wishConsent">
+        May we store your wish in our internet hope chest?
+      </label>
+      <button id="wishSubmit f4">Make wish</button>
+    </div>
+    <div id="wishMessage" class="f4 dn white lh-copy mv4">
+      Bwamp <span class="fw9 f2" id="wishPower"></span> times and maybe your wish comes true?
+      <br>
+      <br>
+      We love you.
     </div>
     <script src="js/bwamp.js"></script>
   </body>
