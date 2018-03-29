@@ -77,8 +77,6 @@
         if (FS && wishConsent.checked) {
           FS.consent(true);
         }
-        twinkle.pause();
-        twinkle.currentTime = 0;
         twinkle.play();
       } else {
         return;
@@ -87,13 +85,7 @@
       e.preventDefault();
     }, false);
 
-    playTwinkle.addEventListener('click', function(e) {
-      twinkle.pause();
-      twinkle.currentTime = 0;
-      twinkle.play();
-
-      e.preventDefault();
-    }, false);
+    wireStereo(playTwinkle, twinkle);
 
     function bwampWish(bwampsTo) {
       if (bwampsTo == 0) {
