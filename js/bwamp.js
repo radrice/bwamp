@@ -8,7 +8,8 @@
         wish = document.getElementById('wish'),
         wishConsent = document.getElementById('wishConsent'),
         wishSubmit = document.getElementById('wishSubmit'),
-        wishPower = document.getElementById('wishPower');
+        wishPower = document.getElementById('wishPower'),
+        twinkle = document.getElementById('twinkle');
 
     function pauseResetPlayAll() {
       for(var i = 0; i < bwamps.length; i++) {
@@ -63,6 +64,7 @@
         if (FS && wishConsent.checked) {
           FS.consent(true);
         }
+        twinkle.play();
       } else {
         return;
       }
