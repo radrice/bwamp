@@ -10,7 +10,6 @@
         wishSubmit = document.getElementById('wishSubmit'),
         wishPower = document.getElementById('wishPower'),
         twinkle = document.getElementById('twinkle'),
-        playTwinkle = document.getElementById('playTwinkle'),
         hasWished = false,
         bwampsToWish = 0;
 
@@ -84,8 +83,6 @@
 
       e.preventDefault();
     }, false);
-
-    wireStereo(playTwinkle, twinkle);
 
     function bwampWish(bwampsTo) {
       if (bwampsTo == 0) {
