@@ -9,7 +9,10 @@
         wishConsent = document.getElementById('wishConsent'),
         wishSubmit = document.getElementById('wishSubmit'),
         wishPower = document.getElementById('wishPower'),
-        twinkle = document.getElementById('twinkle');
+        twinkle = document.getElementById('twinkle'),
+        playTwinkle = document.getElementById('playTwinkle'),
+        hasWished = false,
+        bwampsToWish = 0;
 
     function pauseResetPlayAll() {
       for(var i = 0; i < bwamps.length; i++) {
@@ -21,6 +24,9 @@
 
     playAll.addEventListener('click', function(e) {
       pauseResetPlayAll();
+      if (hasWished) {
+        bwampWish(bwampsToWish);
+      }
       e.preventDefault();
     }, false);
 
@@ -29,6 +35,10 @@
         bwamp.pause();
         bwamp.currentTime = 0;
         bwamp.play();
+
+        if (hasWished) {
+          bwampWish(bwampsToWish);
+        }
         e.preventDefault();
       }, false);
     }
@@ -57,13 +67,18 @@
 
     wishSubmit.addEventListener('click', function(e) {
       var wishValue = getValueString(wish);
+
       if (wishValue) {
         document.getElementById('wishForm').classList.add('dn');
         document.getElementById('wishMessage').classList.remove('dn');
         wishPower.textContent = wishValue.length;
+        bwampsToWish = wishValue.length;
+        hasWished = true;
         if (FS && wishConsent.checked) {
           FS.consent(true);
         }
+        twinkle.pause();
+        twinkle.currentTime = 0;
         twinkle.play();
       } else {
         return;
@@ -71,6 +86,29 @@
 
       e.preventDefault();
     }, false);
+
+    playTwinkle.addEventListener('click', function(e) {
+      twinkle.pause();
+      twinkle.currentTime = 0;
+      twinkle.play();
+
+      e.preventDefault();
+    }, false);
+
+    function bwampWish(bwampsTo) {
+      if (bwampsTo == 0) {
+        return;
+      }
+
+      bwampsTo--
+      if (bwampsTo == 0) {
+        hasWished = false;
+        document.getElementById('wishMessage').classList.add('dn');
+        document.getElementById('wishedMessage').classList.remove('dn');
+      }
+      bwampsToWish = bwampsTo;
+      wishPower.textContent = bwampsToWish;
+    }
 
     function getValueString(input) {
       return input.value.toString();
