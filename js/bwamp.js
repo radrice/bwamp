@@ -6,6 +6,7 @@
         identity = document.getElementById('identity'),
         identified = document.getElementById('identified'),
         wish = document.getElementById('wish'),
+        wishContent = document.getElementById('wishContent'),
         wishConsent = document.getElementById('wishConsent'),
         wishSubmit = document.getElementById('wishSubmit'),
         wishPower = document.getElementById('wishPower'),
@@ -70,6 +71,7 @@
       if (wishValue) {
         document.getElementById('wishForm').classList.add('dn');
         document.getElementById('wishMessage').classList.remove('dn');
+        wishContent.textContent = wishValue;
         wishPower.textContent = wishValue.length;
         bwampsToWish = wishValue.length;
         hasWished = true;
